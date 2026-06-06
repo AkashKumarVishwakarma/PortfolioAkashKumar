@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Terminal, ExternalLink, Code2, Server, Globe } from 'lucide-react';
+import { ExternalLink, Code2, Server, Globe } from 'lucide-react';
 import About from './About';
+import akashImg from '../assets/akashIMG.png';
 
 export default function Hero() {
   const heroTags = ['Java', 'Python', 'MongoDB', 'React', 'SQL', 'Node.js', 'Git'];
@@ -32,9 +33,10 @@ export default function Hero() {
   ];
 
   return (
-    <div className="pt-28 pb-16 animate-fade-in">
-      {/* Landing Info & Terminal Placeholder */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+    <div className="animate-fade-in">
+      {/* Landing Info Section - Occupies Full Screen height (min-h-screen) */}
+      <div className="min-h-screen flex items-center pt-24 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
         {/* Left Side: Headline & Bio */}
         <div className="lg:col-span-7 flex flex-col space-y-6">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
@@ -57,67 +59,42 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side: Sleek Terminal Window */}
-        <div className="lg:col-span-5">
-          <div className="w-full aspect-square max-w-md mx-auto bg-slate-900/60 border border-slate-800 rounded-lg shadow-2xl backdrop-blur-md overflow-hidden flex flex-col relative group">
-            {/* Window bar */}
-            <div className="h-10 bg-slate-950/80 border-b border-slate-800/80 px-4 flex items-center justify-between">
-              <div className="flex space-x-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500/85"></span>
-                <span className="w-3 h-3 rounded-full bg-amber-500/85"></span>
-                <span className="w-3 h-3 rounded-full bg-emerald-500/85"></span>
-              </div>
-              <span className="text-xs text-slate-500 font-mono">portfolio.sh</span>
-              <div className="w-10"></div>
-            </div>
+        {/* Right Side: Sleek Modern Profile Image Container */}
+        <div className="lg:col-span-5 relative group flex justify-center items-center">
+          {/* Subtle ambient backglow */}
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-500"></div>
 
-            {/* Terminal Body */}
-            <div className="flex-1 p-6 font-mono text-sm text-slate-400 space-y-4 overflow-y-auto">
-              <div>
-                <span className="text-indigo-400">guest@cs-portfolio</span>:<span className="text-cyan-400">~</span>$ neofetch
-              </div>
-              <div className="flex gap-4">
-                <div className="text-indigo-500 hidden sm:block font-bold">
-                  {` /\\_/\\
-( o.o )
- > ^ <`}
-                </div>
-                <div className="space-y-1 text-xs">
-                  <p><span className="text-slate-300 font-semibold">User:</span> CSE Student & Developer</p>
-                  <p><span className="text-slate-300 font-semibold">Focus:</span> Full-Stack Web Dev / MERN</p>
-                  <p><span className="text-slate-300 font-semibold">Languages:</span> C++, JS, Python, Java, Rust</p>
-                  <p><span className="text-slate-300 font-semibold">Frameworks:</span> Next.js, React, Node.js</p>
-                  <p><span className="text-slate-300 font-semibold">Status:</span> Seeking Internships & Full-Time</p>
-                </div>
-              </div>
+          <div className="relative w-full max-w-[320px] aspect-[4/5] overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/50 shadow-2xl backdrop-blur-sm">
+            {/* Dark gradient overlay at the bottom to transition smoothly to text */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent z-10 transition-opacity duration-300"></div>
+            
+            {/* Profile Image */}
+            <img
+              src={akashImg}
+              alt="Akash Kumar Profile"
+              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
 
-              <div className="pt-2">
-                <span className="text-indigo-400">guest@cs-portfolio</span>:<span className="text-cyan-400">~</span>$ curl -s api.github.com/users/active
-              </div>
-              <div className="text-xs text-slate-500 bg-slate-950/50 p-2.5 rounded border border-slate-800 font-mono leading-relaxed">
-                {`{
-  "name": "CSE Student",
-  "specialization": "Full-Stack Web Development",
-  "dsa": "Proficient (C++ & Java)",
-  "open_to_work": true
-}`}
-              </div>
-
-              <div className="animate-pulse flex items-center gap-1">
-                <span className="text-indigo-400">guest@cs-portfolio</span>:<span className="text-cyan-400">~</span>$ <span className="w-2 h-4 bg-indigo-500 inline-block"></span>
+            {/* Overlaid details at the bottom of the card */}
+            <div className="absolute inset-x-0 bottom-0 p-6 z-20 flex flex-col justify-end">
+              <span className="text-white font-bold text-xl tracking-wide uppercase drop-shadow-sm">
+                Akash Kumar
+              </span>
+              <div className="flex items-center gap-1.5 text-indigo-400 text-xs font-mono mt-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Software Developer</span>
               </div>
             </div>
 
-            {/* Subtle Terminal Glow Icon overlaying */}
-            <div className="absolute right-4 bottom-4 text-slate-800/20 group-hover:text-indigo-500/10 transition-colors duration-300">
-              <Terminal size={120} />
-            </div>
+            {/* Light reflect line on top border */}
+            <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent z-10"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      {/* Featured Projects Block */}
-      <div className="pt-16">
+    {/* Featured Projects Block */}
+    <div className="py-24 border-t border-slate-900/40">
         <div className="flex justify-between items-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
           <Link

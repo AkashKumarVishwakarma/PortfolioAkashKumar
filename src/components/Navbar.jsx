@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, FileText } from 'lucide-react';
+import akLogo from '../assets/akLOGO.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,11 +33,20 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="text-3xl font-bold tracking-tight text-white hover:text-indigo-400 transition-colors"
+            className="flex items-center gap-3.5 group"
           >
-            Akash Kumar
+            <img
+              src={akLogo}
+              alt="Akash Kumar Logo"
+              className="h-10 md:h-12 w-auto object-contain rounded-md border border-amber-500/20 shadow-md shadow-amber-500/5 transition-all duration-300 group-hover:border-amber-500/40 group-hover:scale-[1.02]"
+            />
+            <div className="flex flex-col justify-center">
+              <span className="text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-indigo-400 transition-colors">
+                Akash Kumar
+              </span>
+              <span className="text-slate-400 text-xs md:text-sm pl-0.5">Software Developer</span>
+            </div>
           </Link>
-          <span className="text-slate-400 text-sm pl-2">Software Developer</span>
         </div>
 
         {/* Desktop Menu */}
