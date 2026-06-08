@@ -20,9 +20,9 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
     setStatus('sending');
-    
+
     // Simulate API request
     setTimeout(() => {
       setStatus('success');
@@ -62,7 +62,7 @@ export default function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Jane Doe"
+                placeholder="Akash Kumar"
                 required
                 disabled={status === 'sending'}
                 className="w-full bg-slate-950/60 border border-slate-800 hover:border-slate-700 focus:border-indigo-500 rounded px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-500 transition-colors text-sm"
@@ -80,7 +80,7 @@ export default function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="jane.doe@example.com"
+                placeholder="abc@gmai.com"
                 required
                 disabled={status === 'sending'}
                 className="w-full bg-slate-950/60 border border-slate-800 hover:border-slate-700 focus:border-indigo-500 rounded px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-500 transition-colors text-sm"
@@ -99,7 +99,7 @@ export default function Contact() {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              placeholder="Project Inquiry"
+              placeholder="Interested in collaborating"
               disabled={status === 'sending'}
               className="w-full bg-slate-950/60 border border-slate-800 hover:border-slate-700 focus:border-indigo-500 rounded px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-500 transition-colors text-sm"
             />
@@ -141,13 +141,13 @@ export default function Contact() {
           {/* Contact Details Card */}
           <div className="bg-slate-900/30 border border-slate-800 rounded p-6 space-y-5">
             <h3 className="text-lg font-bold text-white mb-2">Contact Details</h3>
-            
+
             <div className="flex gap-4">
               <Mail className="text-slate-500 mt-1 shrink-0" size={18} />
               <div>
                 <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">Email</p>
-                <a href="mailto:hello@csportfolio.dev" className="text-sm font-semibold text-slate-200 hover:text-indigo-400 transition-colors">
-                  hello@csportfolio.dev
+                <a href="mailto:akashkumargyn2002@gmail.com" className="text-sm font-semibold text-slate-200 hover:text-indigo-400 transition-colors">
+                  akashkumargyn2002@gmail.com
                 </a>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function Contact() {
               <MapPin className="text-slate-500 mt-1 shrink-0" size={18} />
               <div>
                 <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">Location</p>
-                <p className="text-sm font-semibold text-slate-200">San Francisco, CA</p>
+                <p className="text-sm font-semibold text-slate-200">Bhadohi, Uttar Pradesh</p>
                 <p className="text-xs text-slate-500 mt-0.5 font-medium">Remote OK</p>
               </div>
             </div>
@@ -165,21 +165,21 @@ export default function Contact() {
           {/* Connect Card */}
           <div className="bg-slate-900/30 border border-slate-800 rounded p-6 space-y-6">
             <h3 className="text-lg font-bold text-white mb-2">Connect</h3>
-            
+
             <div className="space-y-4">
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/akashkumarvishwakarma/"
+                target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-slate-300 hover:text-indigo-400 transition-colors text-sm font-semibold"
               >
                 <Link2 size={16} className="text-slate-500" />
                 <span>LinkedIn Profile</span>
               </a>
-              
-              <a 
-                href="https://github.com" 
-                target="_blank" 
+
+              <a
+                href="https://github.com/AkashKumarVishwakarma"
+                target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-slate-300 hover:text-indigo-400 transition-colors text-sm font-semibold"
               >
