@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navItems = [
     { label: 'Skills', to: '/skills' },
-    { label: 'Engineering Experience', to: '/experience' },
+    // { label: 'Engineering Experience', to: '/experience' },
     { label: 'Projects', to: '/projects' },
     { label: 'Contact', to: '/contact' },
   ];

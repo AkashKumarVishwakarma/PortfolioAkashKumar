@@ -8,6 +8,17 @@ export default function Projects() {
 
   const projectsData = [
     {
+      title: 'React Dashboard',
+      category: 'Full-Stack',
+      categoryLabel: 'Full-Stack',
+      description: 'Devloped a centralized dashboard to organize and access multiple react applications. Implemented responsive design, routing, reusable components, and state management using React context API.',
+      tech: ['React', 'JavaScript', 'Tailwind CSS', 'HTML'],
+      links: [
+        { label: 'GitHub', href: 'https://github.com/AkashKumarVishwakarma/react-projects-dashboard', type: 'source' },
+        { label: 'Live Demo', href: 'https://react-projects-dashboard.vercel.app/', type: 'demo' }
+      ]
+    },
+    {
       title: 'Sales Analytics Dashboard',
       category: 'Data & AI',
       categoryLabel: 'Data & AI',
